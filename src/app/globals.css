@@ -25,3 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.li {
+  @apply mr-7 hover:text-white cursor-pointer text-lg active:text-white
+}
