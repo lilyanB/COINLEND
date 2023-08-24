@@ -15,20 +15,20 @@ const Header = () => {
             alt={""}
           />
         </Link>
-        {/* links Div  */}
-
-        <ul className="flex flex-grow justify-around">
-          <li className="li">
-            <Link href={"/btc"}>BTC</Link>
-          </li>
-          <li className="li">
-            <Link href={"/lendborrow"}>Lending and Borring</Link>
-          </li>
-          <li className="li">
-            <Link href={"/wbtc"}>wBTC</Link>
-          </li>
-        </ul>
       </div>
+
+      {/* links Div  */}
+      <ul className="flex  flex-row justify-center items-center">
+        <li className="li">
+          <Link href={"/btc"}>BTC</Link>
+        </li>
+        <li className="li">
+          <Link href={"/lendborrow"}>Lending and Borring</Link>
+        </li>
+        <li className="li">
+          <Link href={"/wbtc"}>wBTC</Link>
+        </li>
+      </ul>
 
       {/* last div  */}
       <div className="flex items-center flex space-x-4">connect</div>
