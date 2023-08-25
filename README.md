@@ -6,6 +6,8 @@ Buildbox: https://app.buidlbox.io/projects/coinlend
 
 vercel: https://coinlend.vercel.app/
 
+zetaScan : https://explorer.zetachain.com/
+
 # addresses
 
 frontend on Vercel : https://coinlend.vercel.app/
