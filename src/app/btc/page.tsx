@@ -7,6 +7,7 @@ export default function Btc() {
   const [amount, setAmount] = useState(0);
   const [address1, setAddress1] = useState("");
   const [address2, setAddress2] = useState("");
+  const [isFormValid, setIsFormValid] = useState(true);
 
   const handleAmountChange = (e: { target: { value: any } }) => {
     setAmount(Number(e.target.value));
@@ -26,9 +27,17 @@ export default function Btc() {
 
   const handleFormSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log("Amount:", amount);
-    console.log("Address 1:", address1);
-    console.log("Address 2:", address2);
+
+    if (!amount || !address1 || !address2) {
+      setIsFormValid(false);
+    } else {
+      console.log("Amount:", amount);
+      console.log("Address 1:", address1);
+      console.log("Address 2:", address2);
+      setIsFormValid(true);
+    }
+
+    return false;
   };
 
   return (
@@ -66,6 +75,11 @@ export default function Btc() {
                 Submit
               </button>
             </form>
+            {!isFormValid && (
+              <p className="text-red-500 mt-2">
+                Please fill out all fields before submitting.
+              </p>
+            )}
           </div>
         </div>
       </main>
