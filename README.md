@@ -4,11 +4,10 @@
 
 Buildbox: https://app.buidlbox.io/projects/coinlend
 
-vercel:
-
+vercel: https://coinlend.vercel.app/
 
 # addresses
 
 frontend on Vercel : https://coinlend.vercel.app/
 
-tBTC : tss	tb1qy9pqmk2pd9sv63g27jt8r657wy0d9ueeh0nqur
+tBTC : tss tb1qy9pqmk2pd9sv63g27jt8r657wy0d9ueeh0nqur

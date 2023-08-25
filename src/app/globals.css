@@ -26,6 +26,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.section {
+  @apply w-full h-full mt-20 flex justify-center mr-auto 
+}
+
 .li {
   @apply mr-7 hover:text-white cursor-pointer text-lg active:text-white
 }
