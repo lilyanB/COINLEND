@@ -5,17 +5,17 @@ import Header from "../components/Header";
 
 export default function Btc() {
   const [amount, setAmount] = useState(0);
-  const [address, setAddress1] = useState("");
+  const [address, setAddress] = useState("");
   const [isFormValid, setIsFormValid] = useState(true);
 
   const handleAmountChange = (e: { target: { value: any } }) => {
     setAmount(Number(e.target.value));
   };
 
-  const handleAddress1Change = (e: {
+  const handleAddressChange = (e: {
     target: { value: React.SetStateAction<string> };
   }) => {
-    setAddress1(e.target.value);
+    setAddress(e.target.value);
   };
 
   const handleFormSubmit = async (e: { preventDefault: () => void }) => {
@@ -86,7 +86,7 @@ export default function Btc() {
                 className="bg-transparent text-center border border-white rounded px-2 py-1 text-white w-full"
                 type="text"
                 value={address}
-                onChange={handleAddress1Change}
+                onChange={handleAddressChange}
               />
               <button
                 className="border border-white rounded-lg px-4 py-2 text-white mt-4"
