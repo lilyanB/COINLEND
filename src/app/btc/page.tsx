@@ -7,6 +7,8 @@ export default function Btc() {
   const [amount, setAmount] = useState(0);
   const [address, setAddress] = useState("");
   const [isFormValid, setIsFormValid] = useState(true);
+  const [result, setResult] = useState("");
+  const [error, setError] = useState("");
 
   const handleAmountChange = (e: { target: { value: any } }) => {
     setAmount(Number(e.target.value));
@@ -59,7 +61,8 @@ export default function Btc() {
           ],
         },
         (error: any, result: any) => {
-          console.log(error, result);
+          setError(error);
+          setResult(result);
         }
       );
     }
@@ -99,6 +102,25 @@ export default function Btc() {
               <p className="text-red-500 mt-2">
                 Please fill out all fields before submitting.
               </p>
+            )}
+            {result && (
+              <div>
+                <p className="text-white mt-2">
+                  Your transaction on Bitcoin Testnet:
+                  <a
+                    href={`https://live.blockcypher.com/btc-testnet/tx/${result}`}
+                    target="_blank"
+                    className="ml-2 text-green-500"
+                  >
+                    {result}
+                  </a>
+                </p>
+              </div>
+            )}
+            {error && (
+              <div>
+                <p className="text-red-500 mt-2">error: {error}</p>
+              </div>
             )}
           </div>
         </div>
