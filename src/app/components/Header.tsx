@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Header = () => {
   return (
@@ -33,7 +34,9 @@ const Header = () => {
         </ul>
 
         {/* last div  */}
-        <div className="flex items-center flex space-x-4">connect</div>
+        <div className="flex items-center flex space-x-4">
+          <ConnectButton />
+        </div>
       </div>
     </header>
   );

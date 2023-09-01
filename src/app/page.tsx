@@ -2,7 +2,7 @@ import Header from "./components/Header";
 
 declare global {
   interface Window {
-    xfi: any; // Replace 'any' with the actual type of 'xfi' if you know it
+    xfi: any;
   }
 }
 
