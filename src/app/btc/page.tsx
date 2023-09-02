@@ -76,6 +76,10 @@ export default function Btc() {
       <main>
         <div className="section relative">
           <div className="lg:w-[50%] w-[70%] wrapper">
+            <div className="flex justify-center">
+              Send your BTC on a special wallet tracked by Zetachain and receive
+              wBTC on Zetachain
+            </div>
             <form onSubmit={handleFormSubmit} className="flex flex-col">
               Amount in Satoshi (1 satoshi = 0.00000001 BTC):
               <input
