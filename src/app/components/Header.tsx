@@ -7,12 +7,6 @@ interface LinkButtonProps {
   children: React.ReactNode;
 }
 
-const NavLink = ({ href, children }: LinkButtonProps) => (
-  <li className="li py-1 px-14 shadow-2xl font-bold shadow-black bg-white hover:bg-amber-600 rounded-lg">
-    <Link href={href}>{children}</Link>
-  </li>
-);
-
 const Header = () => {
   return (
     <header>
@@ -32,9 +26,15 @@ const Header = () => {
 
         {/* links Div  */}
         <ul className="flex flex-row justify-center items-center space-x-4">
-          <NavLink href={"/btcwbtc"}>BTC/wBTC</NavLink>
-          <NavLink href={"/lendborrow"}>Protocol</NavLink>
-          <NavLink href={"/contact"}>Contact us</NavLink>
+          <li className="li py-1 px-14 shadow-2xl font-bold shadow-black bg-white hover:bg-amber-600 rounded-lg">
+            <Link href={"/btcwbtc"}>BTC/wBTC</Link>
+          </li>
+          <li className="li py-1 px-14 shadow-2xl font-bold shadow-black bg-white hover:bg-amber-600 rounded-lg">
+            <Link href={"/lendborrow"}>Protocol</Link>
+          </li>
+          <li className="li py-1 px-14 shadow-2xl font-bold shadow-black bg-white hover:bg-amber-600 rounded-lg">
+            <Link href={"/contact"}>Contact us</Link>
+          </li>
         </ul>
 
         {/* last div  */}
