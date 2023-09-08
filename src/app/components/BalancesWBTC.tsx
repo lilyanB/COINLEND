@@ -24,9 +24,10 @@ const BalancesWBTC = ({ address }: { address: string }) => {
 
   return (
     <div>
-      <p>Your address: {address}</p>
+      <p>Wallet address: </p>
+      <p>{address}</p>
       {balanceWBTC !== null ? (
-        <p>You have {balanceWBTC} wBTC</p>
+        <p>You have {balanceWBTC} wBTC on Zetachain</p>
       ) : (
         <p>Loading balance...</p>
       )}

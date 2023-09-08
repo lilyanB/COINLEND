@@ -4,11 +4,19 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import BalancesWBTC from "../components/BalancesWBTC";
 import { useAccount } from "wagmi";
+import { HiSwitchVertical } from "react-icons/hi";
 
 export default function Btcwbtc() {
   const { address } = useAccount();
   const [amount, setAmount] = useState(0);
-  const [address1, setAddress] = useState("");
+  const [explain, setExplain] = useState(
+    "Send your BTC on a special wallet tracked by Zetachain and receive wBTC on Zetachain"
+  );
+  const [from, setFrom] = useState("BTC");
+  const [to, setTo] = useState("wBTC");
+  const [fromBalance, setFromBalance] = useState(0);
+  const [toBalance, setToBalance] = useState(0);
+  const [direction, setDirection] = useState(true);
   const [isFormValid, setIsFormValid] = useState(true);
   const [result, setResult] = useState("");
   const [error, setError] = useState("");
@@ -17,35 +25,47 @@ export default function Btcwbtc() {
     setAmount(Number(e.target.value));
   };
 
-  const handleAddressChange = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
-    setAddress(e.target.value);
+  const handleDirectionToggle = () => {
+    setDirection(!direction);
+    setFromBalance(0);
+    setToBalance(0);
+
+    if (direction) {
+      setFrom("wBTC");
+      setTo("BTC");
+      setExplain("Send your wBTC and receive BTC on bitcoin");
+    } else {
+      setFrom("BTC");
+      setTo("wBTC");
+      setExplain(
+        "Send your BTC on a special wallet tracked by Zetachain and receive wBTC on Zetachain"
+      );
+    }
   };
 
   const handleFormSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    if (!amount || !address1) {
+    if (!amount || !address) {
       setIsFormValid(false);
     } else {
-      console.log("Amount:", amount);
-      console.log("Address 1:", address1);
       setIsFormValid(true);
 
       const bitcoinTSSAddress = "tb1qy9pqmk2pd9sv63g27jt8r657wy0d9ueeh0nqur";
       const wallet = window?.xfi;
-      if (wallet === undefined) return alert("XDEFI wallet not found");
+
+      if (wallet === undefined) {
+        return alert("XDEFI wallet not found");
+      }
 
       const account = (await wallet?.bitcoin?.getAccounts())?.[0];
-      if (account === undefined) return alert("No account found");
-      console.log("account : ", account);
 
-      const recipient = address1.replace(/^0x/, "");
-      console.log("recipient : ", recipient);
+      if (account === undefined) {
+        return alert("No account found");
+      }
 
+      const recipient = address.replace(/^0x/, "");
       let memo = `hex::${recipient}`;
-      console.log("memo : ", memo);
 
       window.xfi.bitcoin.request(
         {
@@ -63,96 +83,103 @@ export default function Btcwbtc() {
             },
           ],
         },
-        (error: any, result: any) => {
+        (
+          error: React.SetStateAction<string>,
+          result: React.SetStateAction<string>
+        ) => {
           setError(error);
           setResult(result);
         }
       );
     }
+  };
 
-    return false;
+  const renderContent = () => {
+    if (!address) {
+      return (
+        <div className="section relative">
+          <div className="py-7 px-24 text-white lg:w-[50%] w-[70%] wrapper shadow-2xl rounded-lg border-4 border-red-500 shadow-black flex justify-center">
+            Connect your wallet to display information
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="section relative">
+        <div className="py-7 px-24 text-black lg:w-[50%] w-[70%] wrapper shadow-2xl rounded-lg border-4 border-black shadow-black">
+          <div className="flex justify-center">{explain}</div>
+          <div className="flex justify-start">From: {from}</div>
+          <div className="flex justify-start">
+            Blockchain:{" "}
+            {direction ? (
+              <img
+                className="border border-black"
+                src={"/zetachainLogo.jpg"}
+                alt="logo zetachain"
+                style={{ width: "40px", height: "40px" }}
+              />
+            ) : (
+              <img
+                className="border border-black"
+                src={"/bitcoinLogo.png"}
+                alt="logo bitcoin"
+                style={{ width: "40px", height: "40px" }}
+              />
+            )}
+          </div>
+          <div>
+            <BalancesWBTC address={address} />
+          </div>
+          <form onSubmit={handleFormSubmit} className="flex flex-col">
+            Amount in Satoshi (1 satoshi = 0.00000001 BTC):
+            <input
+              className="bg-transparent text-center border border-white rounded px-2 py-1 text-white w-full"
+              type="number"
+              value={amount}
+              onChange={handleAmountChange}
+            />
+            <button
+              className="py-1 px-14 shadow-2xl font-bold shadow-black bg-white hover:bg-amber-600 rounded-lg"
+              type="submit"
+            >
+              {"Receive " + (direction ? "BTC" : "wBTC")}
+            </button>
+          </form>
+          <HiSwitchVertical onClick={handleDirectionToggle} />
+          {result && (
+            <div>
+              <p className="text-white mt-2">
+                Your transaction on Bitcoin Testnet:
+                <a
+                  href={`https://live.blockcypher.com/btc-testnet/tx/${result}`}
+                  target="_blank"
+                  className="ml-2 text-green-500"
+                >
+                  {result}
+                </a>
+              </p>
+            </div>
+          )}
+          {!isFormValid && (
+            <p className="text-red-500 mt-2">
+              Please fill out all fields before submitting.
+            </p>
+          )}
+          {error && (
+            <div>
+              <p className="text-red-500 mt-2">error: {error}</p>
+            </div>
+          )}
+        </div>
+      </div>
+    );
   };
 
   return (
     <div className="flex flex-col relative">
       <Header />
-      <main>
-        {address && (
-          <>
-            <div className="section relative">
-              <div className="py-7 px-24 text-white lg:w-[50%] w-[70%] wrapper shadow-2xl rounded-lg border-4 border-black shadow-black">
-                <div className="flex justify-center">
-                  Send your BTC on a special wallet tracked by Zetachain and
-                  receive wBTC on Zetachain
-                </div>
-                <form onSubmit={handleFormSubmit} className="flex flex-col">
-                  Amount in Satoshi (1 satoshi = 0.00000001 BTC):
-                  <input
-                    className="bg-transparent text-center border border-white rounded px-2 py-1 text-white w-full"
-                    type="number"
-                    value={amount}
-                    onChange={handleAmountChange}
-                  />
-                  Address 1:
-                  <input
-                    className="bg-transparent text-center border border-white rounded px-2 py-1 text-white w-full"
-                    type="text"
-                    value={address1}
-                    onChange={handleAddressChange}
-                  />
-                  <button
-                    className="border border-white rounded-lg px-4 py-2 text-white mt-4"
-                    type="submit"
-                  >
-                    Submit
-                  </button>
-                </form>
-                {!isFormValid && (
-                  <p className="text-red-500 mt-2">
-                    Please fill out all fields before submitting.
-                  </p>
-                )}
-                {result && (
-                  <div>
-                    <p className="text-white mt-2">
-                      Your transaction on Bitcoin Testnet:
-                      <a
-                        href={`https://live.blockcypher.com/btc-testnet/tx/${result}`}
-                        target="_blank"
-                        className="ml-2 text-green-500"
-                      >
-                        {result}
-                      </a>
-                    </p>
-                  </div>
-                )}
-                {error && (
-                  <div>
-                    <p className="text-red-500 mt-2">error: {error}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-            <div className="section relative">
-              <div className="lg:w-[50%] w-[70%] wrapper">
-                <div className="flex justify-center">
-                  Send your wBTC and receive BTC on bitcoin
-                </div>
-                <div>
-                  <BalancesWBTC address={address} />
-                </div>
-              </div>
-            </div>
-          </>
-        )}
-        {!address && (
-          <div className="section relative">
-            <div className="py-7 px-24 text-white lg:w-[50%] w-[70%] wrapper shadow-2xl rounded-lg border-4 border-red-500 shadow-black flex justify-center">
-              Connect your wallet to display informations
-            </div>
-          </div>
-        )}
-      </main>
+      <main>{renderContent()}</main>
     </div>
   );
 }
