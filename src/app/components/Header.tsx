@@ -1,7 +1,17 @@
 import Image from "next/image";
-import React from "react";
 import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+
+interface LinkButtonProps {
+  href: string;
+  children: React.ReactNode;
+}
+
+const NavLink = ({ href, children }: LinkButtonProps) => (
+  <li className="li py-1 px-14 shadow-2xl font-bold shadow-black bg-white hover:bg-amber-600 rounded-lg">
+    <Link href={href}>{children}</Link>
+  </li>
+);
 
 const Header = () => {
   return (
@@ -21,20 +31,14 @@ const Header = () => {
         </div>
 
         {/* links Div  */}
-        <ul className="flex  flex-row justify-center items-center">
-          <li className="li">
-            <Link href={"/btc"}>BTC</Link>
-          </li>
-          <li className="li">
-            <Link href={"/lendborrow"}>Lending and Borring</Link>
-          </li>
-          <li className="li">
-            <Link href={"/wbtc"}>wBTC</Link>
-          </li>
+        <ul className="flex flex-row justify-center items-center space-x-4">
+          <NavLink href={"/btcwbtc"}>BTC/wBTC</NavLink>
+          <NavLink href={"/lendborrow"}>Protocol</NavLink>
+          <NavLink href={"/contact"}>Contact us</NavLink>
         </ul>
 
         {/* last div  */}
-        <div className="flex items-center flex space-x-4">
+        <div className="flex items-center">
           <ConnectButton />
         </div>
       </div>
