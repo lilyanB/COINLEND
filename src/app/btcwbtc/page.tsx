@@ -77,75 +77,81 @@ export default function Btcwbtc() {
     <div className="flex flex-col relative">
       <Header />
       <main>
-        <div className="section relative">
-          <div className="lg:w-[50%] w-[70%] wrapper">
-            <div className="flex justify-center">
-              Send your BTC on a special wallet tracked by Zetachain and receive
-              wBTC on Zetachain
-            </div>
-            <form onSubmit={handleFormSubmit} className="flex flex-col">
-              Amount in Satoshi (1 satoshi = 0.00000001 BTC):
-              <input
-                className="bg-transparent text-center border border-white rounded px-2 py-1 text-white w-full"
-                type="number"
-                value={amount}
-                onChange={handleAmountChange}
-              />
-              Address 1:
-              <input
-                className="bg-transparent text-center border border-white rounded px-2 py-1 text-white w-full"
-                type="text"
-                value={address1}
-                onChange={handleAddressChange}
-              />
-              <button
-                className="border border-white rounded-lg px-4 py-2 text-white mt-4"
-                type="submit"
-              >
-                Submit
-              </button>
-            </form>
-            {!isFormValid && (
-              <p className="text-red-500 mt-2">
-                Please fill out all fields before submitting.
-              </p>
-            )}
-            {result && (
-              <div>
-                <p className="text-white mt-2">
-                  Your transaction on Bitcoin Testnet:
-                  <a
-                    href={`https://live.blockcypher.com/btc-testnet/tx/${result}`}
-                    target="_blank"
-                    className="ml-2 text-green-500"
-                  >
-                    {result}
-                  </a>
-                </p>
-              </div>
-            )}
-            {error && (
-              <div>
-                <p className="text-red-500 mt-2">error: {error}</p>
-              </div>
-            )}
-          </div>
-        </div>
-        <div className="section relative">
-          <div className="lg:w-[50%] w-[70%] wrapper">
-            <div className="flex justify-center">
-              Send your wBTC and receive BTC on bitcoin
-            </div>
-            <div>
-              {address && <BalancesWBTC address={address} />}
-              {!address && (
-                <div className="flex justify-center text-red-500">
-                  Connect your wallet to display informations
+        {address && (
+          <>
+            <div className="section relative">
+              <div className="py-7 px-24 text-white lg:w-[50%] w-[70%] wrapper shadow-2xl rounded-lg border-4 border-black shadow-black">
+                <div className="flex justify-center">
+                  Send your BTC on a special wallet tracked by Zetachain and
+                  receive wBTC on Zetachain
                 </div>
-              )}
+                <form onSubmit={handleFormSubmit} className="flex flex-col">
+                  Amount in Satoshi (1 satoshi = 0.00000001 BTC):
+                  <input
+                    className="bg-transparent text-center border border-white rounded px-2 py-1 text-white w-full"
+                    type="number"
+                    value={amount}
+                    onChange={handleAmountChange}
+                  />
+                  Address 1:
+                  <input
+                    className="bg-transparent text-center border border-white rounded px-2 py-1 text-white w-full"
+                    type="text"
+                    value={address1}
+                    onChange={handleAddressChange}
+                  />
+                  <button
+                    className="border border-white rounded-lg px-4 py-2 text-white mt-4"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </form>
+                {!isFormValid && (
+                  <p className="text-red-500 mt-2">
+                    Please fill out all fields before submitting.
+                  </p>
+                )}
+                {result && (
+                  <div>
+                    <p className="text-white mt-2">
+                      Your transaction on Bitcoin Testnet:
+                      <a
+                        href={`https://live.blockcypher.com/btc-testnet/tx/${result}`}
+                        target="_blank"
+                        className="ml-2 text-green-500"
+                      >
+                        {result}
+                      </a>
+                    </p>
+                  </div>
+                )}
+                {error && (
+                  <div>
+                    <p className="text-red-500 mt-2">error: {error}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="section relative">
+              <div className="lg:w-[50%] w-[70%] wrapper">
+                <div className="flex justify-center">
+                  Send your wBTC and receive BTC on bitcoin
+                </div>
+                <div>
+                  <BalancesWBTC address={address} />
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+        {!address && (
+          <div className="section relative">
+            <div className="py-7 px-24 text-white lg:w-[50%] w-[70%] wrapper shadow-2xl rounded-lg border-4 border-red-500 shadow-black flex justify-center">
+              Connect your wallet to display informations
             </div>
           </div>
-        </div>
+        )}
       </main>
     </div>
   );
