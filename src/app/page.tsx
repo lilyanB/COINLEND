@@ -61,10 +61,10 @@ export default function Home() {
         >
           This project is intended for the Zetachain Hackathon. We tried to
           implement a lending and borrowing protocol for the Bitcoin blockchain.
-          To do this, we've made full use of the capabilities that Zetachain
-          gives us via its technologies. The project is just a first version
-          that we hope to be able to refine. We hope you'll enjoy the
-          experience.
+          To do this, we&apos;ve made full use of the capabilities that
+          Zetachain gives us via its technologies. The project is just a first
+          version that we hope to be able to refine. We hope you&apos;ll enjoy
+          the experience.
         </div>
       </div>
     </main>
