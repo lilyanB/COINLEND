@@ -38,7 +38,7 @@ const Header = () => {
         </ul>
 
         {/* last div  */}
-        <div className="flex items-center">
+        <div className="flex items-center ml-4">
           <ConnectButton />
         </div>
       </div>

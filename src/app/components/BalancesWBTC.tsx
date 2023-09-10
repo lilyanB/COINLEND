@@ -22,17 +22,7 @@ const BalancesWBTC = ({ address }: { address: string }) => {
     fetchWBTCBalance();
   }, [address]);
 
-  return (
-    <div>
-      <p>Wallet address: </p>
-      <p>{address}</p>
-      {balanceWBTC !== null ? (
-        <p>You have {balanceWBTC} wBTC on Zetachain</p>
-      ) : (
-        <p>Loading balance...</p>
-      )}
-    </div>
-  );
+  return balanceWBTC;
 };
 
 export default BalancesWBTC;
