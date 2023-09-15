@@ -9,6 +9,7 @@ import AddressBTC from "../components/AddressBTC";
 
 export default function Btcwbtc() {
   const { address } = useAccount();
+  const [XDefiInstall, setXDefiInstall] = useState(false);
   const [amount, setAmount] = useState(0);
   const [from, setFrom] = useState("BTC");
   const [to, setTo] = useState("wBTC");
@@ -18,6 +19,23 @@ export default function Btcwbtc() {
   const [isFormValid, setIsFormValid] = useState(true);
   const [result, setResult] = useState("");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function XDefi() {
+      try {
+        const wallet = window?.xfi;
+        if (wallet === undefined) {
+          setXDefiInstall(false);
+        } else {
+          setXDefiInstall(true);
+        }
+      } catch (error) {
+        console.error("Erroooooorrr", error);
+      }
+    }
+
+    XDefi();
+  }, []);
 
   useEffect(() => {
     async function fetchWBTCBalance() {
@@ -55,7 +73,7 @@ export default function Btcwbtc() {
   const handleFormSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    if (!amount || !address) {
+    if (!amount || !address || !XDefiInstall) {
       setIsFormValid(false);
     } else {
       setIsFormValid(true);
@@ -63,10 +81,6 @@ export default function Btcwbtc() {
       if (direction) {
         const bitcoinTSSAddress = "tb1qy9pqmk2pd9sv63g27jt8r657wy0d9ueeh0nqur";
         const wallet = window?.xfi;
-
-        if (wallet === undefined) {
-          return alert("XDEFI wallet not found");
-        }
 
         const account = (await wallet?.bitcoin?.getAccounts())?.[0];
 
@@ -116,7 +130,7 @@ export default function Btcwbtc() {
     <div className="flex flex-col items-center">
       <Header />
       <div className="section relative">
-        {address ? (
+        {address && XDefiInstall ? (
           <div className="py-7 px-24 text-black lg:w-[50%] w-[70%] wrapper shadow-2xl rounded-lg border-4 border-black shadow-black">
             <div className="flex flex-col items-center">
               You have {<BalancesWBTC address={address} />} wBTC on Zetachain
@@ -218,7 +232,9 @@ export default function Btcwbtc() {
           </div>
         ) : (
           <div className="py-7 px-24 text-white lg:w-[50%] w-[70%] wrapper shadow-2xl rounded-lg border-4 border-red-500 shadow-black flex justify-center">
-            Connect your wallet to display information
+            {XDefiInstall
+              ? "Connect your wallet to display information"
+              : "Install Xdefi wallet to display information"}
           </div>
         )}
       </div>

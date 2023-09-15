@@ -9,7 +9,9 @@ const AddressBTC = () => {
     async function fetchBTCBalance() {
       try {
         if (wallet === undefined) {
-          return alert("XDEFI wallet not found");
+          return alert(
+            "XDEFI wallet not found. Please install the extension before using the swap."
+          );
         }
 
         const account = (await wallet?.bitcoin?.getAccounts())?.[0];
