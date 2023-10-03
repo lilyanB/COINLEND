@@ -1,6 +1,8 @@
 # coinlend
 
-# Link
+# Simplify Borrowing with Zetachain
+
+## Links
 
 Buildbox: https://app.buidlbox.io/projects/coinlend
 
@@ -8,13 +10,19 @@ vercel: https://coinlend.vercel.app/
 
 zetaScan : https://explorer.zetachain.com/
 
-# addresses
+## Project short bio
+
+We will make lending and borrowing protocols that let you lend/borrow native Bitcoin
+
+## Project long description
+
+## addresses
 
 frontend on Vercel : https://coinlend.vercel.app/
 
 tBTC : tss tb1qy9pqmk2pd9sv63g27jt8r657wy0d9ueeh0nqur
 
-## info dev
+### info dev
 
 send 100 Satoshi to Zetachain:
 
