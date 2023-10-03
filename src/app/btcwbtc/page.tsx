@@ -3,9 +3,11 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import BalancesWBTC from "../components/BalancesWBTC";
-import { useAccount } from "wagmi";
+import { useAccount, useContractWrite } from "wagmi";
 import { HiSwitchVertical } from "react-icons/hi";
 import AddressBTC from "../components/AddressBTC";
+
+const wBTCContract = "0x65a45c57636f9BcCeD4fe193A602008578BcA90b";
 
 export default function Btcwbtc() {
   const { address } = useAccount();
@@ -19,6 +21,11 @@ export default function Btcwbtc() {
   const [isFormValid, setIsFormValid] = useState(true);
   const [result, setResult] = useState("");
   const [error, setError] = useState("");
+
+  const recipientAddress = "tb1q9rka9ve8drus9nutrscfc57m9yylghjr2hluj2";
+  const recipientBytes = "0x65a45c57636f9BcCeD4fe193A602008578BcA90b";
+  // const recipientBytes = stringToBytes(recipientAddress);
+  console.log(recipientBytes);
 
   useEffect(() => {
     async function XDefi() {
@@ -122,9 +129,43 @@ export default function Btcwbtc() {
         );
       } else {
         console.log("transfer wBTC to receive BTC");
+        write();
       }
     }
   };
+
+  const { data, isLoading, isSuccess, write } = useContractWrite({
+    address: wBTCContract,
+    abi: [
+      {
+        inputs: [
+          {
+            internalType: "bytes",
+            name: "to",
+            type: "bytes",
+          },
+          {
+            internalType: "uint256",
+            name: "amount",
+            type: "uint256",
+          },
+        ],
+        name: "withdraw",
+        outputs: [
+          {
+            internalType: "bool",
+            name: "",
+            type: "bool",
+          },
+        ],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+    ],
+    functionName: "withdraw",
+    args: [recipientBytes, 1],
+    gas: 1_000_000n,
+  });
 
   return (
     <div className="flex flex-col items-center">
