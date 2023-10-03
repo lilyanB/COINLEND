@@ -2,6 +2,8 @@
 
 # Simplify Borrowing with Zetachain
 
+![logo](public/all.png)
+
 ## Links
 
 Buildbox: https://app.buidlbox.io/projects/coinlend
