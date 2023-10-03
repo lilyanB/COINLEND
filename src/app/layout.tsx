@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "CoinLend",
-  description: "Lending and borrowing native Bitcoin",
+  description: "Simplify Borrowing with Zetachain",
 };
 
 export default function RootLayout({

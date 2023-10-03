@@ -15,11 +15,11 @@ const Header = () => {
           <Link href={"/"}>
             <Image
               src={"/logo.png"}
-              width={40}
+              width={60}
               height={40}
               className="mr-12"
               alt={""}
-              style={{ width: "40px", height: "40px" }}
+              style={{ width: "60px", height: "40px" }}
             />
           </Link>
         </div>
