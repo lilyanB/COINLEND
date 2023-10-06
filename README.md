@@ -35,17 +35,15 @@ Join us on this exciting journey to simplify borrowing with ZetaChain. Together,
 
 ## Links
 
-- [Buildbox](https://app.buidlbox.io/projects/coinlend)`{:target="_blank"}`
+- [Buildbox](https://app.buidlbox.io/projects/coinlend)
 
-- [Vercel](https://coinlend.vercel.app/)
+- [Deployed](https://coinlend.vercel.app/)
 
 - [Zetachain](https://www.zetachain.com/)
 
 - [ZetaScan](https://explorer.zetachain.com/)
 
 ## addresses
-
-frontend on Vercel : https://coinlend.vercel.app/
 
 tBTC : tss tb1qy9pqmk2pd9sv63g27jt8r657wy0d9ueeh0nqur
 
