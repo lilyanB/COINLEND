@@ -35,7 +35,7 @@ Join us on this exciting journey to simplify borrowing with ZetaChain. Together,
 
 ## Links
 
-- [Buildbox](https://app.buidlbox.io/projects/coinlend)
+- [Buildbox](https://app.buidlbox.io/projects/coinlend)`{:target="_blank"}`
 
 - [Vercel](https://coinlend.vercel.app/)
 
