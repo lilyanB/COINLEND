@@ -1,3 +1,23 @@
+# Nom de votre projet
+
+## À Propos
+
+Description générale de votre projet.
+
+<details>
+<summary>Informations pour les Développeurs</summary>
+
+Contenu spécifique aux développeurs, instructions de développement, structure du code, etc.
+
+</details>
+
+<details>
+<summary>Informations pour le Grand Public</summary>
+
+Informations destinées au grand public, utilisation de haut niveau, captures d'écran, etc.
+
+</details>
+
 # coinlend
 
 # Simplify Borrowing with Zetachain
