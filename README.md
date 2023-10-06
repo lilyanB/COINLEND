@@ -8,8 +8,10 @@
 
 We will make lending and borrowing protocols that let you lend/borrow native Bitcoin
 
+## Project long description
+
 <details>
-<summary>## Project long description</summary>
+<summary></summary>
 
 Coinlend is a groundbreaking financial ecosystem designed to revolutionize the way users interact with digital assets by seamlessly bridging the gap between ZetaChain and Bitcoin. Our mission is to simplify borrowing and lending in the world of cryptocurrency, making it accessible to everyone.
 
@@ -19,15 +21,15 @@ Our lending and borrowing protocols are at the core of Coinlend's innovation. By
 
 Key features of Coinlend:
 
-Seamless Asset Transfer: Coinlend simplifies the process of moving Bitcoin to ZetaChain, eliminating the complexities often associated with cross-chain transactions.
+- Seamless Asset Transfer: Coinlend simplifies the process of moving Bitcoin to ZetaChain, eliminating the complexities often associated with cross-chain transactions.
 
-Lending Opportunities: Users can become lenders and earn passive income by providing their Bitcoin assets for lending within the ZetaChain ecosystem.
+- Lending Opportunities: Users can become lenders and earn passive income by providing their Bitcoin assets for lending within the ZetaChain ecosystem.
 
-Borrowing Convenience: Borrowers gain access to much-needed liquidity by leveraging their assets on ZetaChain as collateral to secure Bitcoin loans.
+- Borrowing Convenience: Borrowers gain access to much-needed liquidity by leveraging their assets on ZetaChain as collateral to secure Bitcoin loans.
 
-User-Friendly Interface: We prioritize user experience, ensuring that both lending and borrowing processes are straightforward and intuitive.
+- User-Friendly Interface: We prioritize user experience, ensuring that both lending and borrowing processes are straightforward and intuitive.
 
-Security and Trust: Coinlend employs robust security measures to safeguard users' assets and maintain the highest level of trust within the platform.
+- Security and Trust: Coinlend employs robust security measures to safeguard users' assets and maintain the highest level of trust within the platform.
 
 Coinlend is more than just a financial platform; it's a gateway to the future of blockchain finance. As we continue to develop our prototype and expand our services, we aim to empower users to make the most of the crypto ecosystem, whether they are interested in DeFi, payments, art, games, or other blockchain applications.
 
