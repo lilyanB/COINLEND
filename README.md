@@ -37,13 +37,6 @@ Join us on this exciting journey to simplify borrowing with ZetaChain. Together,
 
 </details>
 
-<details>
-<summary>Informations pour le Grand Public</summary>
-
-Informations destinées au grand public, utilisation de haut niveau, captures d'écran, etc.
-
-</details>
-
 ## Links
 
 Buildbox: https://app.buidlbox.io/projects/coinlend
