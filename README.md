@@ -49,14 +49,18 @@ tBTC : tss tb1qy9pqmk2pd9sv63g27jt8r657wy0d9ueeh0nqur
 
 ### info dev
 
-send 100 Satoshi to Zetachain:
+send 200 Satoshi to Zetachain:
 
-https://blockstream.info/testnet/tx/2e360f762cf006c755d7ecfc36d18cadad976cec84b8ef650685f9815965c36d?expand
+https://blockstream.info/testnet/tx/f4811ede895c33bfe2f1a4a535bd53c726a697c1d856713477c23910e9557aad
 
-https://blockchair.com/bitcoin/testnet/transaction/2e360f762cf006c755d7ecfc36d18cadad976cec84b8ef650685f9815965c36d
+https://blockchair.com/bitcoin/testnet/transaction/f4811ede895c33bfe2f1a4a535bd53c726a697c1d856713477c23910e9557aad
 
 tx on Zetachain on my dev wallet:
 
 https://explorer.zetachain.com/address/0x607Ec1a7F093801b40DaE21131dDAdB8ce991106
 
-https://explorer.zetachain.com/evm/tx/0x3a5af3ab7b0c2d117b590aff628e15354ea05f46b6b6da2d6b2c216390a4e02b
+https://explorer.zetachain.com/evm/tx/
+
+result : Ireceive wBTC on Zetachain to enter in my lending and borrowing
+
+![result](result.png)
