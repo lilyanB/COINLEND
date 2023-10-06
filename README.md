@@ -1,7 +1,3 @@
-# coinlend
-
-# Simplify Borrowing with Zetachain
-
 ![logo](front/public/all.png)
 
 ## Project short bio
@@ -41,9 +37,11 @@ Join us on this exciting journey to simplify borrowing with ZetaChain. Together,
 
 Buildbox: https://app.buidlbox.io/projects/coinlend
 
-vercel: https://coinlend.vercel.app/
+Vercel: https://coinlend.vercel.app/
 
-zetaScan : https://explorer.zetachain.com/
+Zetachain: https://www.zetachain.com/
+
+ZetaScan : https://explorer.zetachain.com/
 
 ## addresses
 
