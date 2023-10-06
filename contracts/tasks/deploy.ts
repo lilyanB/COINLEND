@@ -1,4 +1,3 @@
-import { getAddress } from "@zetachain/protocol-contracts";
 import { task } from "hardhat/config";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 
@@ -17,10 +16,18 @@ const main = async (args: any, hre: HardhatRuntimeEnvironment) => {
   }
   console.log(`🔑 Using account: ${signer.address}\n`);
 
-  const systemContract = getAddress("systemContract", "zeta_testnet");
+  
+  const lar = await hre.ethers.getContractFactory("LARToken");
+  const LAR = await lar.deploy();
+  await LAR.deployed();
 
-  const factory = await hre.ethers.getContractFactory("MyContract");
-  const contract = await factory.deploy(systemContract);
+  console.log(`🚀 Successfully deployed contract on ZetaChain.
+📜 Contract address: ${LAR.address}
+🌍 Explorer: https://athens3.explorer.zetachain.com/address/${LAR.address}
+`);
+
+  const factory = await hre.ethers.getContractFactory("LendingAndBorrowing");
+  const contract = await factory.deploy(LAR.address);
   await contract.deployed();
 
   console.log(`🚀 Successfully deployed contract on ZetaChain.

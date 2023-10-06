@@ -7,7 +7,7 @@ export default function Lendborrow() {
       <main>
         <div className="section relative">
           <div className="lg:w-[50%] w-[70%] wrapper">
-            <div className="flex justify-center">lendborrow</div>
+            <div className="flex justify-center">Coming soon. You can see the current contracts</div>
           </div>
         </div>
       </main>
