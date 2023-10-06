@@ -35,13 +35,13 @@ Join us on this exciting journey to simplify borrowing with ZetaChain. Together,
 
 ## Links
 
-- [Buildbox](https://app.buidlbox.io/projects/coinlend){:target="\_blank"}
+- [Buildbox](https://app.buidlbox.io/projects/coinlend)
 
-- [Vercel](https://coinlend.vercel.app/){:target="\_blank"}
+- [Vercel](https://coinlend.vercel.app/)
 
-- [Zetachain](https://www.zetachain.com/){:target="\_blank"}
+- [Zetachain](https://www.zetachain.com/)
 
-- [ZetaScan](https://explorer.zetachain.com/){:target="\_blank"}
+- [ZetaScan](https://explorer.zetachain.com/)
 
 ## addresses
 
