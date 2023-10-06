@@ -61,6 +61,8 @@ https://explorer.zetachain.com/address/0x607Ec1a7F093801b40DaE21131dDAdB8ce99110
 
 https://explorer.zetachain.com/evm/tx/0x94fa326c71dcdced281a23f8d9ebd0dd7f83697f50ac576ca470e7af2dca327d
 
+![tx](screen/4.png)
+
 Result: I receive wBTC(tBTC) on Zetachain to participate in my lending and borrowing activities.
 
 ![result](result.png)
