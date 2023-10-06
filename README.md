@@ -11,7 +11,7 @@ We will make lending and borrowing protocols that let you lend/borrow native Bit
 ## Project long description
 
 <details>
-<summary></summary>
+<summary><strong>Project long description</strong></summary>
 
 Coinlend is a groundbreaking financial ecosystem designed to revolutionize the way users interact with digital assets by seamlessly bridging the gap between ZetaChain and Bitcoin. Our mission is to simplify borrowing and lending in the world of cryptocurrency, making it accessible to everyone.
 
