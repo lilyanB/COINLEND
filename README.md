@@ -1,23 +1,3 @@
-# Nom de votre projet
-
-## À Propos
-
-Description générale de votre projet.
-
-<details>
-<summary>Informations pour les Développeurs</summary>
-
-Contenu spécifique aux développeurs, instructions de développement, structure du code, etc.
-
-</details>
-
-<details>
-<summary>Informations pour le Grand Public</summary>
-
-Informations destinées au grand public, utilisation de haut niveau, captures d'écran, etc.
-
-</details>
-
 # coinlend
 
 # Simplify Borrowing with Zetachain
@@ -28,7 +8,8 @@ Informations destinées au grand public, utilisation de haut niveau, captures d'
 
 We will make lending and borrowing protocols that let you lend/borrow native Bitcoin
 
-## Project long description
+<details>
+<summary>## Project long description</summary>
 
 Coinlend is a groundbreaking financial ecosystem designed to revolutionize the way users interact with digital assets by seamlessly bridging the gap between ZetaChain and Bitcoin. Our mission is to simplify borrowing and lending in the world of cryptocurrency, making it accessible to everyone.
 
@@ -51,3 +32,40 @@ Security and Trust: Coinlend employs robust security measures to safeguard users
 Coinlend is more than just a financial platform; it's a gateway to the future of blockchain finance. As we continue to develop our prototype and expand our services, we aim to empower users to make the most of the crypto ecosystem, whether they are interested in DeFi, payments, art, games, or other blockchain applications.
 
 Join us on this exciting journey to simplify borrowing with ZetaChain. Together, we'll unlock the potential of a fluid, multi-chain crypto ecosystem, where financial opportunities are truly limitless. Coinlend is not just a project; it's a movement towards a more inclusive and accessible blockchain world.
+
+</details>
+
+<details>
+<summary>Informations pour le Grand Public</summary>
+
+Informations destinées au grand public, utilisation de haut niveau, captures d'écran, etc.
+
+</details>
+
+## Links
+
+Buildbox: https://app.buidlbox.io/projects/coinlend
+
+vercel: https://coinlend.vercel.app/
+
+zetaScan : https://explorer.zetachain.com/
+
+## addresses
+
+frontend on Vercel : https://coinlend.vercel.app/
+
+tBTC : tss tb1qy9pqmk2pd9sv63g27jt8r657wy0d9ueeh0nqur
+
+### info dev
+
+send 100 Satoshi to Zetachain:
+
+https://blockstream.info/testnet/tx/2e360f762cf006c755d7ecfc36d18cadad976cec84b8ef650685f9815965c36d?expand
+
+https://blockchair.com/bitcoin/testnet/transaction/2e360f762cf006c755d7ecfc36d18cadad976cec84b8ef650685f9815965c36d
+
+tx on Zetachain on my dev wallet:
+
+https://explorer.zetachain.com/address/0x607Ec1a7F093801b40DaE21131dDAdB8ce991106
+
+https://explorer.zetachain.com/evm/tx/0x3a5af3ab7b0c2d117b590aff628e15354ea05f46b6b6da2d6b2c216390a4e02b
