@@ -3,6 +3,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Contact() {
   // Define your project information
@@ -11,8 +12,9 @@ export default function Contact() {
     slogan: "Simplify Borrowing with ZetaChain",
     description:
       "Our mission is to simplify borrowing and lending in the world of cryptocurrency, making it accessible to everyone.",
-    github: "https://coinlend.vercel.app/",
+    github: "https://github.com/lilyanB/coinlend",
     zetachain: "https://www.zetachain.com/",
+    project: "https://app.buidlbox.io/projects/coinlend"
   };
 
   return (
@@ -33,18 +35,23 @@ export default function Contact() {
                 <h1 className="text-2xl font-bold">{projectInfo.name}</h1>
                 <p className="text-xl">{projectInfo.slogan}</p>
                 <p className="text-lg">{projectInfo.description}</p>
-                <a
-                  href={projectInfo.github}
+                <Link href={projectInfo.github}
                   className="text-white hover:underline"
                 >
                   Github
-                </a>
-                <a
-                  href={projectInfo.zetachain}
+                </Link>
+                {' '}
+                <Link href={projectInfo.project}
+                  className="text-white hover:underline"
+                >
+                  Project on Buidlbox
+                </Link>
+                {' '}
+                <Link href={projectInfo.zetachain}
                   className="text-white hover:underline"
                 >
                   Zetachain
-                </a>
+                </Link>
               </div>
             </div>
           </div>
